@@ -42,6 +42,8 @@ async function getDevtoolsPageForTarget (target) {
     const devtoolsPage = await browser.newPage();
     await devtoolsPage.goto(pageDebuggingUrl);
 
+    await devtoolsPage.waitForSelector('.insertion-point-main');
+
     return devtoolsPage;
 }
 
